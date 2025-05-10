@@ -1,0 +1,126 @@
+ * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .blinking-text {
+            animation: blink 1s infinite;
+            font-size: clamp(18px, 5vw, 32px);
+            font-weight: bold;
+            color: red;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-section {
+            width: 100%;
+            height: 300px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-bottom: 20px;
+        }
+
+        #main {
+            background-image: url(yawaa.jpg);
+        }
+
+        #roman {
+            background-image: url(romchik.jpg);
+            background-attachment: scroll;
+        }
+
+        #description {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            font-size: clamp(14px, 4vw, 20px);
+            text-align: justify;
+            word-spacing: normal;
+        }
+
+        footer {
+            background-image: url(troll.jpg);
+            background-size: cover;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: clamp(14px, 4vw, 24px);
+        }
+
+        .footer-text {
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* Десктопная версия */
+        @media (min-width: 768px) {
+            .content-container {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            #main {
+                width: 30%;
+                height: 700px;
+            }
+
+            #roman {
+                width: 40%;
+                height: 700px;
+            }
+
+            #description {
+                width: 30%;
+                height: 700px;
+                overflow-y: auto;
+                padding: 40px;
+            }
+
+            footer {
+                height: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+        /* Анимация для прикола */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        #roman {
+            animation: float 3s ease-in-out infinite;
+        }
